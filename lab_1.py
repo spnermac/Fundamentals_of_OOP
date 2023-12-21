@@ -7,6 +7,15 @@ import doctest
 
 class Ellipse:
     def __init__(self, radius_1: int, radius_2: int):
+
+        """"
+        Создание и подготовка к работе обьекта 'Эллипс'
+        :param radius_1 - большая полуось эллипса
+        :param radius_2 - малая полуось эллипса
+        Примеры:
+        ellipse_1  = Ellipse(16,9)
+        """
+
         if not isinstance(radius_1, int):
             raise TypeError('Длины полуосей должны быть типа int')
 
@@ -20,7 +29,7 @@ class Ellipse:
         self.radius_2 = radius_2
 
         def area_count(self, radius_1: int, radius_2: int) -> int:
-            """"
+            """""
              Расчет площади эллипса:
              radius_1 - большая полуось эллипса
              radius_2 - малая полуось эллипса
@@ -40,6 +49,15 @@ class Ellipse:
 class Rivers:
     def __init__(self, name: str, length: int, deep: int):
 
+        """"
+        Создание и подготовка к работе обьекта 'Реки'
+        :param name - Название реки
+        :param length - Длина реки
+        :param deep - Глубина реки
+        Примеры:
+        river_1  = Rivers('Нева', 74,9)
+        """
+
         if not isinstance(name, str):
             raise TypeError('Название должно быть типа str')
 
@@ -52,7 +70,7 @@ class Rivers:
         if not isinstance(deep, int):
             raise TypeError('Глубина реки должна быть типа int')
 
-        if lengdeepth <=0:
+        if length*deep <=0:
             raise ValueError('Глубина реки должна быть положительными')
 
         self.name = name
@@ -76,7 +94,17 @@ class Rivers:
             ...
 
 class Cities:
-    def __init__(self,country: str, name: str, people: int):
+    def __init__(self,name: str, country: str, people: int):
+
+        """"
+       Создание и подготовка к работе обьекта 'Города'
+       :param name - Название города
+       :param length - Название старны
+       :param deep - Население(тыс чел)
+       Примеры:
+       city_1  = Cities('Москва', 'Россия', 13100)
+       """
+
         if not isinstance(country, str):
             raise TypeError('Страна должна быть типа str')
 
@@ -110,4 +138,7 @@ class Cities:
              """
             ...
 
-doctest.testmod()
+if __name__ == "__main__":
+    # TODO работоспособность экземпляров класса проверить с помощью doctest
+    doctest.testmod()
+    pass
